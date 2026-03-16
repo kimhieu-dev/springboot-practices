@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnCheckpointRestore;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.function.EntityResponse;
 
 import java.util.List;
 
@@ -25,6 +26,14 @@ public class ProductOfferingController {
         List<ProductOffering> response = productOfferingService.getAll();
         return ResponseEntity.ok(response);
     }
+    @GetMapping("/filter")
+    private EntityResponse<List<ProductOffering>> filter(
+            @RequestParam (name = "name", required = false) String name,
+            @RequestParam (name = "minPrice", required = false) String minPrice,
+            @RequestParam (name = "maxPrice", required = false) String maxPrice,
+            @RequestParam (name = "name", required = false) String name,
+            @RequestParam (name = "name", required = false) String name,
+    )
 //    @GetMapping("")
 //    public ResponseEntity<List<ProductOffering>> getByName(@PathVariable String name){
 //        List<ProductOffering> response = productOfferingService.getByName(name);
