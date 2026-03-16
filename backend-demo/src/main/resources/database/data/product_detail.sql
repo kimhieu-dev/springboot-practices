@@ -1,0 +1,13 @@
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (1, 150, 'samsung', 's23');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (2, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (3, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (4, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (5, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (6, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (7, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (8, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (9, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (10, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (11, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (12, 162, 'panasonic', 'air conditioner');
+INSERT INTO product.product_detail (id, weight, brand, description) VALUES (13, 162, 'panasonic', 'air conditioner');
