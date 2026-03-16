@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/products")
 public class ProductOfferingController {
+
     @Autowired
     private ProductOfferingService productOfferingService;
     @GetMapping("/{id}")
@@ -31,9 +32,12 @@ public class ProductOfferingController {
             @RequestParam (name = "name", required = false) String name,
             @RequestParam (name = "minPrice", required = false) String minPrice,
             @RequestParam (name = "maxPrice", required = false) String maxPrice,
-            @RequestParam (name = "name", required = false) String name,
-            @RequestParam (name = "name", required = false) String name,
-    )
+            @RequestParam (name = "color", required = false) String color,
+            @RequestParam (name = "status", required = false) String status
+    ){
+
+        List<ProductOffering> response = productOfferingService.filter();
+    }
 //    @GetMapping("")
 //    public ResponseEntity<List<ProductOffering>> getByName(@PathVariable String name){
 //        List<ProductOffering> response = productOfferingService.getByName(name);
