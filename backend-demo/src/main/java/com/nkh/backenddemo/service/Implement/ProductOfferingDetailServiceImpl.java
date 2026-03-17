@@ -45,9 +45,10 @@ public class ProductOfferingDetailServiceImpl implements ProductOfferingDetailSe
         }
 
         //logic
-        //1.delete
+        //1-1.delete all then add
         //productOfferingDetailRepo.deleteByProductOfferingId(request.getProductOfferingId());
-        //2.add
+        //1-2. override field
+        //2. add
         List<ProductOfferingDetail> productOfferingDetailList = new ArrayList<>();
 
         for (int i = 0; i < productDetails.size(); i++) {
