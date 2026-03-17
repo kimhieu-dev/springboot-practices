@@ -5,6 +5,8 @@ import com.nkh.backenddemo.dto.request.ProductOfferingReq;
 import com.nkh.backenddemo.entity.ProductOffering;
 import com.nkh.backenddemo.repository.ProductOfferingRepo;
 import com.nkh.backenddemo.service.ProductOfferingService;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import java.util.Optional;
 
 @Service
 public class ProductOfferingServiceImpl implements ProductOfferingService {
+    @Autowired
+    EntityManager entityManager;
     @Autowired
     private ProductOfferingRepo productOfferingRepo;
     @Override
@@ -58,5 +62,11 @@ public class ProductOfferingServiceImpl implements ProductOfferingService {
 
         return productOfferingRepo.save(productOffering);
 
+    }
+
+    @Override
+    public List<ProductOffering> filter(String name, Long minPrice, Long maxPrice, String color, String status) {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        
     }
 }

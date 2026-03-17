@@ -27,16 +27,18 @@ public class ProductOfferingController {
         List<ProductOffering> response = productOfferingService.getAll();
         return ResponseEntity.ok(response);
     }
+    //filter product offering
     @GetMapping("/filter")
-    private EntityResponse<List<ProductOffering>> filter(
+    private ResponseEntity<List<ProductOffering>> filter(
             @RequestParam (name = "name", required = false) String name,
-            @RequestParam (name = "minPrice", required = false) String minPrice,
-            @RequestParam (name = "maxPrice", required = false) String maxPrice,
+            @RequestParam (name = "minPrice", required = false) Long minPrice,
+            @RequestParam (name = "maxPrice", required = false) Long maxPrice,
             @RequestParam (name = "color", required = false) String color,
             @RequestParam (name = "status", required = false) String status
     ){
 
-        List<ProductOffering> response = productOfferingService.filter();
+        List<ProductOffering> response = productOfferingService.filter(name,minPrice,maxPrice,color,status);
+        return ResponseEntity.ok(response);
     }
 //    @GetMapping("")
 //    public ResponseEntity<List<ProductOffering>> getByName(@PathVariable String name){

@@ -11,4 +11,5 @@ public interface ProductOfferingService {
     List<ProductOffering> getByName(String name);
     List<ProductOffering> getByNameAndPrice(String name, Long price);
     ProductOffering save(ProductOfferingReq productOfferingReq);
+    List<ProductOffering> filter(String name, Long minPrice, Long maxPrice, String color, String status);
 }
