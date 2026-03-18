@@ -3,7 +3,6 @@ package com.nkh.backenddemo.service.Implement;
 import com.nkh.backenddemo.common.ProductOfferingCommon;
 import com.nkh.backenddemo.dto.request.ProductOfferingReq;
 import com.nkh.backenddemo.entity.ProductOffering;
-import com.nkh.backenddemo.entity.ProductOfferingDetail;
 import com.nkh.backenddemo.repository.ProductOfferingRepo;
 import com.nkh.backenddemo.service.ProductOfferingService;
 import jakarta.persistence.EntityManager;
@@ -101,6 +100,7 @@ public class ProductOfferingServiceImpl implements ProductOfferingService {
 
         if (status != null && !status.isEmpty()) {
             Predicate predicate = criteriaBuilder.like(root.get("status"),status);
+            predicates.add(predicate);
         }
         query.where(predicates.toArray(new Predicate[0]));
 
