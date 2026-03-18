@@ -1,3 +1,12 @@
 spring:
   application:
     name: backend-demo
+  datasource:
+    username: root
+    password: root
+    url: "jdbc:mysql://localhost:3306/product"
+server:
+  port: 8033
+logging:
+  level:
+    sql: debug
