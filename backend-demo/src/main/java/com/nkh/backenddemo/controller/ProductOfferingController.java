@@ -12,7 +12,7 @@ import org.springframework.web.servlet.function.EntityResponse;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/products")
+@RequestMapping("/v1/product-offerings")
 public class ProductOfferingController {
 
     @Autowired
