@@ -4,6 +4,7 @@ import com.nkh.backenddemo.dto.request.ProductDetailReq;
 import com.nkh.backenddemo.entity.ProductDetail;
 import com.nkh.backenddemo.repository.ProductDetailRepo;
 import com.nkh.backenddemo.service.ProductDetailService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,7 @@ public class ProductDetailServiceImpl implements ProductDetailService {
     }
 
     @Override
+    @Transactional
     public ProductDetail create(ProductDetailReq productDetailReq) {
         //validate
         if(productDetailReq.getWeight() == null

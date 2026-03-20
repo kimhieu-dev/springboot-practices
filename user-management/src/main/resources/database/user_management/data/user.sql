@@ -1,0 +1,15 @@
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (1, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (2, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (3, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (4, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (5, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (6, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (7, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (8, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (9, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (10, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (11, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (12, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (13, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (14, 'abcd', 'Hieu', 'Nguyen', 22);
+INSERT INTO user_management.user (id, user_name, first_name, last_name, age) VALUES (15, 'abcd', 'Hieu', 'Nguyen', 22);
