@@ -28,4 +28,6 @@ public class UserController {
         User response = userService.getUserById(id);
         return ResponseEntity.ok(response);
     }
+
+    
 }
