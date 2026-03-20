@@ -10,6 +10,7 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +51,7 @@ public class ProductOfferingServiceImpl implements ProductOfferingService {
     }
 
     @Override
+    @Transactional
     public ProductOffering save(ProductOfferingReq productOfferingReq) {
         //validate
         if (productOfferingReq.getName() == null
@@ -100,7 +102,7 @@ public class ProductOfferingServiceImpl implements ProductOfferingService {
 
         if (status != null && !status.isEmpty()) {
             Predicate predicate = criteriaBuilder.like(root.get("status"),status);
-            predicates.add(predicate);
+            //predicates.add(predicate);
         }
         query.where(predicates.toArray(new Predicate[0]));
 
