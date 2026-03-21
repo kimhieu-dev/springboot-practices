@@ -11,4 +11,8 @@ public interface TeamService {
     Team getTeamById(Long id);
 
     Team createTeam(TeamReq request);
+
+    Team updateTeam(Long id, TeamReq request);
+
+    void deleteTeam(Long id);
 }

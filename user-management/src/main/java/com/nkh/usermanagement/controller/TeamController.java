@@ -33,5 +33,15 @@ public class TeamController {
         return ResponseEntity.ok(response);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Team> updateTeam(@PathVariable Long id, @RequestBody TeamReq request){
+        Team response = teamService.updateTeam(id,request);
+        return ResponseEntity.ok(response);
+    }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Team> deleteTeam(@PathVariable Long id){
+        teamService.deleteTeam(id);
+        return ResponseEntity.noContent().build();
+    }
 }

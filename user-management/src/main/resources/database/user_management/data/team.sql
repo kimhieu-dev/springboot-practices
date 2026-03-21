@@ -1,0 +1,13 @@
+INSERT INTO user_management.team (id, name, description) VALUES (27, 'abcd1', 'description abc');
+INSERT INTO user_management.team (id, name, description) VALUES (28, 'abcd2', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (29, 'abcd3', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (30, 'abcd4', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (31, 'abcd5', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (32, 'abcd6', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (33, 'abcd7', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (34, 'abcd8', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (35, 'abcd9', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (36, 'abcd10', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (37, 'abcd11', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (38, 'abcd12', 'description 123');
+INSERT INTO user_management.team (id, name, description) VALUES (39, 'abcd13', 'description 123');

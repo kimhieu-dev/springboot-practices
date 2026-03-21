@@ -54,5 +54,39 @@ public class TeamServiceImpl implements TeamService {
         return team;
     }
 
+    @Override
+    public Team updateTeam(Long id, TeamReq request) {
+        //validate
+        Optional<Team> teamOptional = teamRepo.findById(id);
+        if(teamOptional.isEmpty()){
+            throw new RuntimeException("Khong co team co id nay");
+        }
+        if(request.getName() == null || request.getName().isEmpty()){
+            throw new RuntimeException("Name must not be null");
+        }
+        if(request.getDescription() == null || request.getDescription().isEmpty()){
+            throw new RuntimeException("Description must not be null");
+        }
+        Optional<Team> isExistByName = teamRepo.findByName(request.getName());
+        if(isExistByName.isPresent()){
+            throw new RuntimeException("Da ton tai name team nay");
+        }
+        Team team = teamOptional.get();
+        team.setName(request.getName());
+        team.setDescription(request.getDescription());
+        teamRepo.save(team);
+        return team;
+    }
+
+    @Override
+    public void deleteTeam(Long id) {
+        //validate
+        Optional<Team> teamOptional = teamRepo.findById(id);
+        if(teamOptional.isEmpty()){
+            throw new RuntimeException("Khong co team co id nay");
+        }
+        teamRepo.delete(teamOptional.get());
+    }
+
 
 }
