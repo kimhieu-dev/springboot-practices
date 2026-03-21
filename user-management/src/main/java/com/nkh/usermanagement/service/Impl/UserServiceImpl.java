@@ -4,6 +4,7 @@ import com.nkh.usermanagement.dto.request.UserReq;
 import com.nkh.usermanagement.entity.User;
 import com.nkh.usermanagement.repository.UserRepo;
 import com.nkh.usermanagement.service.UserService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public User createUser(UserReq request) {
         //validate
         if (request.getUserName() == null || request.getUserName().isEmpty()) {
@@ -60,6 +62,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public User updateUser(Long id, UserReq request) {
         //validate
         Optional<User> userOptional = userRepo.findById(id);
@@ -92,6 +95,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void deleteUser(Long id) {
         //validate xem co user co id
         Optional<User> userOptional = userRepo.findById(id);
