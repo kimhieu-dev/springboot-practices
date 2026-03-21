@@ -7,6 +7,7 @@ import com.nkh.usermanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(Long id) {
-        Optional<User> userOptional = userRepo.getUserById(id);
+        Optional<User> userOptional = userRepo.findById(id);
         if (userOptional.isEmpty()) {
             throw new RuntimeException("Ko co user co id nay");
         }
@@ -46,7 +47,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("age must be not null");
         }
         //ten co the duplicate nhung username ko duoc duplicate
-        if (userRepo.findByUserName(request.getUserName()).isPresent()){
+        if (userRepo.findByUserName((request.getUserName())).isPresent()){
             throw new RuntimeException("username exist");
         }
         User user = new User();
@@ -56,5 +57,48 @@ public class UserServiceImpl implements UserService {
         user.setAge(request.getAge());
         userRepo.save(user);
         return user;
+    }
+
+    @Override
+    public User updateUser(Long id, UserReq request) {
+        //validate
+        Optional<User> userOptional = userRepo.findById(id);
+        //kiem tra xem trong db co user nay chua
+        if(userOptional.isEmpty()){
+            throw new RuntimeException("Khong co user nao co id nay");
+        }
+        if (request.getUserName() == null || request.getUserName().isEmpty()) {
+            throw new RuntimeException("username must be not null");
+        }
+        if (request.getFirstName() == null || request.getFirstName().isEmpty()) {
+            throw new RuntimeException("firstname must be not null");
+        }
+        if (request.getLastName() == null || request.getLastName().isEmpty()) {
+            throw new RuntimeException("lastname must be not null");
+        }
+        if (request.getAge() == null) {
+            throw new RuntimeException("age must be not null");
+        }
+        //ten co the duplicate nhung username ko duoc duplicate
+        if (userRepo.findByUserName(request.getUserName()).isPresent()){
+            throw new RuntimeException("username exist");
+        }
+        userOptional.get().setUserName(request.getUserName());
+        userOptional.get().setFirstName(request.getFirstName());
+        userOptional.get().setLastName(request.getLastName());
+        userOptional.get().setAge(request.getAge());
+        userRepo.save(userOptional.get());
+        return userOptional.get();
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        //validate xem co user co id
+        Optional<User> userOptional = userRepo.findById(id);
+        if(userOptional.isEmpty()){
+            throw new RuntimeException("Khong co user nay");
+        }
+        //neu tim thay
+        userRepo.delete(userOptional.get());
     }
 }

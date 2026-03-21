@@ -22,14 +22,27 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id){
+    public ResponseEntity<User> getUserById(@PathVariable Long id) {
         User response = userService.getUserById(id);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody UserReq request){
+    public ResponseEntity<User> createUser(@RequestBody UserReq request) {
         User response = userService.createUser(request);
         return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody UserReq request) {
+        User response = userService.updateUser(id, request);
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<User> deleteUser(@PathVariable Long id){
+        //tra ve 204
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
     }
 }
