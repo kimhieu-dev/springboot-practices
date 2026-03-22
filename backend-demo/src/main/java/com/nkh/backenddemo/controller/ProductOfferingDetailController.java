@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/product-offering-detail")
+@RequestMapping("api/v1/product-offering-detail")
 public class ProductOfferingDetailController {
     @Autowired
     private ProductOfferingDetailService productOfferingDetailService;

@@ -7,27 +7,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "team")
-public class Team implements Serializable {
-
+@Table(name = "user_team")
+public class UserTeam implements Serializable {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", unique = true, nullable = false)
-    private String name;
+    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 
-    @Column(name = "description", nullable = false)
-    private String description;
-
-    @OneToMany(mappedBy = "team")
-    private List<UserTeam> userTeam;
+    @JoinColumn(name = "team_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Team team;
 }

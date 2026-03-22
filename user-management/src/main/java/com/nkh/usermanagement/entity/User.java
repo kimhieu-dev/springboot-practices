@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -31,4 +32,7 @@ public class User implements Serializable {
 
     @Column(name = "age",nullable = false)
     private Long age;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserTeam> userTeam;
 }
